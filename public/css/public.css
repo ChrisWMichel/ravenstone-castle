@@ -1,0 +1,112 @@
+/*********Footer ********************/
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/*********End Footer ********************/
+
+@media
+only screen and (max-width: 1500px),
+only screen and (min-device-width: 768px) and (max-device-width: 1024px)
+{
+#right-side, #left-side{display: none}
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+/* ************ End left and right border *****************/
+.carousel{
+    padding:15px 15px;
+}
+@media(max-width: 850px){
+    .carousel{
+        display: none;
+    }
+}
+/*********Footer ********************/
+
+body{
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+}
+
+#container {
+    /*margin: 0 auto;
+    padding-top: 64px;
+    max-width: 640px;
+    width: 94%;*/
+}
+
+footer{
+    background: black;
+    color: darkgrey;
+    font-weight: bolder;
+    position: absolute;
+    right: 12%;
+    bottom: 0;
+    left: 12%;
+    padding: 1rem;
+    height:30px;
+    /*text-align: center;*/
+}
+footer p{
+    margin-top:-4px;
+    padding-bottom: 4px;
+}
+/*********End Footer ********************/
+
+
+.graybkg{
+    background-color: #efefef;
+}
+
+.bold_font{
+    font-weight: bolder;
+}
+.no_top_padding{
+    padding-top:0;
+    margin-top:0;
+}
+.no_bottom_padding{
+    padding-bottom:0;
+    margin-bottom:0;
+}
+/********************** Class Schedule Page *****************/
+table tr td, table tr th{
+    text-align: center;
+    font-size:18px;
+}
+h2.panel-title{
+    text-align: center;
+}
+.home-padding{
+    padding:8px;
+}
+img{
+    box-shadow: 5px 5px 5px #888888;
+    border: 1px solid black;
+    /*padding:10px;*/
+    margin:8px;
+}
+img.noBorder{
+    box-shadow: none;
+    border:none;
+}
+
+/**********Contact Page***************/
+.contact-center{
+    text-align: center;
+}
+.contact-center h2{
+    text-align: left;
+}
