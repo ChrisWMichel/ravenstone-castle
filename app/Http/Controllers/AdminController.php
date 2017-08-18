@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
+use App\HeaderPhoto;
 use App\Mail\newAdmin;
+
+use App\Phone;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
@@ -80,5 +85,14 @@ class AdminController extends Controller
         User::find($id)->delete();
 
         return redirect()->back();
+    }
+
+    public function logout() {
+        Auth::logout();
+
+        $phone = Phone::select('phone')->first();
+        $photos = HeaderPhoto::all();
+
+        return view('layouts.public_layout', compact('phone', 'photos'));
     }
 }

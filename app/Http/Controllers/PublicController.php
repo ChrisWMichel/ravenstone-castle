@@ -35,10 +35,7 @@ class PublicController extends Controller {
                 $rooms = Room::all();
                 $extras = RoomExtra::all();
 
-                return view(
-                  'public.breakfast',
-                  compact('page', 'rooms', 'extras')
-                );
+                return view('public.breakfast', compact('page', 'rooms', 'extras'));
                 break;
             case 'events':
                 $page = Menu::where('id_name', '=', 'events')->first();
@@ -46,35 +43,24 @@ class PublicController extends Controller {
                 $gray_box = GrayBox::where('menu_id', '=', $page->id)->first();
 
                 return view(
-                  'public.events',
-                  compact('page', 'gray_box', 'event_details')
-                );
+                  'public.events', compact('page', 'gray_box', 'event_details'));
 
                 break;
             case 'contact':
                 $page = Menu::where('id_name', '=', $request->id)->first();
-                $attributes = Attribute::where('menu_id', '=', $page->id)->get(
-                );
+                $attributes = Attribute::where('menu_id', '=', $page->id)->get();
                 $info = Info::all()->first();
                 $phones = Phone::all();
 
-                return view(
-                  'public.contact',
-                  compact('page', 'attributes', 'info', 'phones')
-                );
+                return view('public.contact', compact('page', 'attributes', 'info', 'phones'));
                 break;
             case 'home':
                 $page = Menu::where('id_name', '=', $request->id)->first();
-                $attributes = Attribute::where('menu_id', '=', $page->id)->get(
-                );
+                $attributes = Attribute::where('menu_id', '=', $page->id)->get();
                 $event = Menu::where('id_name', '=', 'events')->first();
-                $event_details = Attribute::where('menu_id', '=', $event->id)
-                  ->get();
+                $event_details = Attribute::where('menu_id', '=', $event->id)->get();
 
-                return view(
-                  'public.index',
-                  compact('page', 'attributes', 'event_details')
-                );
+                return view('public.index', compact('page', 'attributes', 'event_details'));
                 break;
             default:
                 $page = Menu::where('id_name', '=', $request->id)->first();
@@ -82,10 +68,7 @@ class PublicController extends Controller {
                 );
                 $gray_box = GrayBox::where('menu_id', '=', $page->id)->first();
 
-                return view(
-                  'public.index',
-                  compact('page', 'attributes', 'gray_box')
-                );
+                return view('public.index', compact('page', 'attributes', 'gray_box'));
         }
 
     }
