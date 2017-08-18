@@ -96,6 +96,7 @@
 
                                 {!! Form::submit('Create Room', ['class' => 'btn btn-primary pull-right bottom-padding']) !!}
                             </div>
+                        {!! Form::close() !!}
                         {{--</form>--}}
                         <br>
                     </div>
@@ -143,6 +144,7 @@
 
                             {!! Form::submit('Create Room', ['class' => 'btn btn-primary pull-right bottom-padding']) !!}
                         </div>
+                        {!! Form::close() !!}
                         <br>
                     </div>
             </div>
